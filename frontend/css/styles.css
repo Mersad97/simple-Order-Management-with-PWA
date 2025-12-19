@@ -1,0 +1,299 @@
+/* Simple toast notification style */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  z-index: 1000;
+  opacity: 0;
+  animation: fadeInOut 4s ease-in-out;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Reset some basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and basic styles */
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+}
+
+/* Header */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #2a2a2a;
+}
+
+/* Form Styles */
+form {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 30px;
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Textarea */
+textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+/* Button Styles */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Orders List */
+#orders-list {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+}
+
+#orders-list h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+#orders ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#orders ul li {
+  background-color: #f1f1f1;
+  margin: 8px 0;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Sync and Connection Status */
+#sync-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+#sync-btn:hover {
+  background-color: #218838;
+}
+
+#connection-status {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #888;
+}
+#connection-status .red {
+  color: red;
+}
+#connection-status .green {
+  color: green;
+}
+:root {
+  --success-bg: #e8f7ee;
+  --success-text: #176b39;
+  --success-border: #bfe8cb;
+
+  --error-bg: #fdeaea;
+  --error-text: #8a1f1f;
+  --error-border: #f5c2c2;
+
+  --modal-bg: #ffffff;
+  --modal-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+  --border-radius: 12px;
+}
+.modal-container {
+  display: block;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 999;
+}
+.modal-container.close {
+  display: none;
+}
+.modal {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 1000;
+}
+.modal-content {
+  width: min(520px, 90vw);
+  background: var(--modal-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--modal-shadow);
+  overflow: hidden;
+  transform: translateY(10px);
+  direction: rtl;
+  font-family: sans-serif;
+}
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-bottom: 1px solid #eee;
+}
+.modal-close {
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 1;
+}
+.modal-message {
+  padding: 16px;
+  margin: 16px;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 12px 16px 16px;
+  border-top: 1px solid #f5f5f5;
+}
+.btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #f7f7f7;
+  cursor: pointer;
+}
+.modal-message.success {
+  background: var(--success-bg);
+  color: var(--success-text);
+  border: 1px solid var(--success-border);
+  border-radius: 10px;
+}
+.modal-message.error {
+  background: var(--error-bg);
+  color: var(--error-text);
+  border: 1px solid var(--error-border);
+  border-radius: 10px;
+}
+@media (max-width: 400px) {
+  .modal-content {
+    width: 92vw;
+  }
+  .modal-header h3 {
+    font-size: 16px;
+  }
+}
+
+/* استک چند پیام */
+.modal-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: min(520px, 90vw);
+}
+
+/* هر پیام یک آیتم مستقل */
+.modal-item {
+  width: 100%;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: transform 200ms ease, opacity 200ms ease;
+}
+
+/* ورود */
+.modal-item.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* خروج */
+.modal-item.out {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.modal-container {
+  pointer-events: none; /* کلیک‌ها ازش رد میشن */
+}
+.modal-stack,
+.modal-item {
+  pointer-events: auto; /* خود پیام‌ها قابل کلیک باشند */
+}

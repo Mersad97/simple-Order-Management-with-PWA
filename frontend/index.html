@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Offline Order Management</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <h1>Order Management System</h1>
+
+    <!-- Form to create orders -->
+    <form id="order-form">
+      <input type="text" id="customer-name" placeholder="Customer Name" required />
+      <input type="text" id="item" placeholder="Item" required />
+      <input type="number" id="quantity" placeholder="Quantity" required />
+      <input type="number" id="price" placeholder="Price" required />
+      <textarea id="description" placeholder="Description"></textarea>
+      <button type="submit">Create Order</button>
+    </form>
+
+    <!-- List of orders -->
+    <div id="orders-list">
+      <h2>Orders</h2>
+      <ul id="orders"></ul>
+    </div>
+
+    <!-- Sync and Connection Status -->
+    <button id="sync-btn" style="display: none">Sync Now</button>
+    <div id="connection-status">
+      Connection Status:
+
+      <span id="connection-status-span">Offline</span>
+    </div>
+
+    <div class="modal-container close" id="modal-container">
+      <div id="status-modal" class="modal">
+        <div id="modal-stack" class="modal-stack" role="region" aria-label="پیام‌ها"></div>
+      </div>
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
